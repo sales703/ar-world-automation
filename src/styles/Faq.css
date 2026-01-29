@@ -1,0 +1,114 @@
+/* FAQ.css */
+
+/* --- General Styles --- */
+.faq-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  h1, h2 {
+    color: #1a4d94; /* Deep blue heading color */
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* --- Hero Section --- */
+  .faq-hero {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #f4f7fa;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  /* --- FAQ Container & Items --- */
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .faq-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the answer content stays within the border radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #e9f0f9;
+    border: none;
+    padding: 1.25rem 2rem;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #1a4d94;
+  }
+  
+  .faq-question:hover {
+    background-color: #dce7f5;
+  }
+  
+  .faq-question.open {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .faq-toggle-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a4d94;
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-question.open .faq-toggle-icon {
+    transform: rotate(45deg); /* Optional: Rotate the plus icon */
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 2rem;
+    background-color: #ffffff;
+  }
+  
+  .faq-answer.open {
+    max-height: 500px; /* A large value to allow the content to expand */
+    padding: 1.5rem 2rem;
+  }
+  
+  /* --- Responsive Design --- */
+  @media (max-width: 768px) {
+    .faq-page {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .faq-hero {
+      padding: 2rem 0;
+    }
+    
+    .faq-question {
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
+    }
+  }

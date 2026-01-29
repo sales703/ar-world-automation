@@ -1,0 +1,43 @@
+/* Container for the entire button */
+.gmail-button {
+  position: fixed;
+  bottom: 100px; /* 👈 Puts it at the bottom */
+  right: 20px;  /* 👈 Keeps it at the right */
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+  z-index: 9999; /* Ensures it is always on top of other content */
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #EA4335; /* Google's red color */
+
+  /* Flexbox for centering the icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* The animation property */
+  animation: smooth-blinker 2s infinite ease-in-out;
+}
+
+/* Style for the Gmail logo image */
+.gmail-icon {
+  width: 60%;
+  height: 60%;
+}
+
+/* Keyframe animation for a smoother blink */
+@keyframes smooth-blinker {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

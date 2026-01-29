@@ -1,0 +1,124 @@
+/* ---------- HERO SECTION ---------- */
+* {
+    box-sizing: border-box; /* includes padding/border in width */
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    overflow-x: hidden; /* prevent horizontal scroll */
+  }
+  
+.hero {
+    width: 100%;
+    height: 90vh; /* almost full screen */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Swiper container */
+  .hero-swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Each slide with background image */
+  .hero-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Overlay (dark transparent layer for readability) */
+  .hero-slide::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* darken */
+    z-index: 1;
+  }
+  
+  /* Text content on top */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+    padding: 0 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+  }
+  
+  /* CTA button */
+  .hero-content .btn {
+    display: inline-block;
+    background: #0056a3;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .hero-content .btn:hover {
+    background: #004080;
+  }
+  
+  /* ---------- SWIPER STYLING ---------- */
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #fff !important;
+    transition: color 0.3s;
+  }
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    color: #0056a3 !important;
+  }
+  
+  .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.7;
+  }
+  .swiper-pagination-bullet-active {
+    background: #0056a3;
+    opacity: 1;
+  }
+  
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 768px) {
+    .hero {
+      height: 70vh;
+    }
+  
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .hero-content .btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+  

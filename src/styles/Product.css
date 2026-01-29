@@ -1,0 +1,95 @@
+/* --- General Styles --- */
+.products-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #1a4d94; /* Deep blue heading color */
+  text-align: center;
+}
+
+/* --- Hero Section --- */
+.products-hero {
+  text-align: center;
+  padding: 4rem 0;
+  background-color: #f4f7fa;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* --- Categories Section --- */
+.categories-section {
+  margin: 2rem 0;
+}
+
+.categories-section h3 {
+  font-size: 2.5rem;
+  color: #1a4d94;
+  margin-bottom: 1rem;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Always 5 per row */
+  gap: 25px; /* spacing between cards */
+}
+
+.category-wrapper {
+  text-align: center;
+  cursor: pointer;
+}
+
+.category-card {
+  height: 200px; /* increased card size */
+  width: 100%;
+  border-radius: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fcfcfa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.category-card.active {
+  border: 3px solid #1a4d94;
+}
+
+.category-label {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #333;
+}
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(26, 77, 148, 0.6); /* blue shadow */
+}
+
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  }
+}
+
+@media (max-width: 992px) {
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}

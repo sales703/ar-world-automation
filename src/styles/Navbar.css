@@ -1,0 +1,195 @@
+/* ---------- Topbar ---------- */
+.site-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f6f9;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  color: #222;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.top-btn {
+  background: #0056a3;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Add flexbox to the top-right to align icons */
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icons if you add more */
+}
+
+/* ---------- Navbar ---------- */
+.site-navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 50;
+}
+.site-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* logo */
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-logo img {
+  width: 48px;
+  height: auto;
+  display: block;
+}
+.logo-text h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #0056a3;
+  line-height: 1;
+}
+.logo-text p {
+  margin: 0;
+  font-size: 0.65rem;
+  color: #0056a3;
+  opacity: 0.9;
+}
+
+/* nav - desktop layout */
+.site-nav ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.site-nav a:hover {
+  color: #0056a3;
+}
+
+/* enquire button in nav (desktop) */
+.nav-enquire a {
+  background: #0056a3;
+  color: #fff !important;
+  padding: 8px 14px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+/* hamburger - hidden on desktop */
+.site-hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 6px;
+}
+.site-hamburger .line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #222;
+  margin: 4px 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* active state - transform into X */
+.site-hamburger.is-active .line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.site-hamburger.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+.site-hamburger.is-active .line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------- MOBILE (<=768px) ---------- */
+@media (max-width: 768px) {
+  .logo-text h2 {
+    font-size: 1rem;
+  }
+  .site-inner {
+    padding: 10px 12px;
+  }
+
+  /* show hamburger */
+  .site-hamburger {
+    display: block;
+  }
+
+  /* nav becomes hidden panel by default (max-height trick for slide) */
+  .site-nav {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.36s cubic-bezier(0.2, 0.9, 0.2, 1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    z-index: 40;
+  }
+
+  /* when open, allow the content to expand (adjust max-height if you have many links) */
+  .site-nav.open {
+    max-height: 600px; /* large enough to show all links */
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 8px 6px;
+    color: #111;
+    font-size: 1rem;
+  }
+
+  .nav-enquire a {
+    display: inline-block;
+    padding: 8px 12px;
+  }
+}
+
+/* ---------- small fix so desktop nav always visible (important specificity) ---------- */
+@media (min-width: 769px) {
+  .site-nav {
+    max-height: none !important;
+    position: static;
+    box-shadow: none;
+  }
+  .site-nav ul {
+    display: flex;
+  }
+}
