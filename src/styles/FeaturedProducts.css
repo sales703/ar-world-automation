@@ -1,0 +1,258 @@
+/* ===== Featured Products Section ===== */
+.featured-products {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  font-family: Arial, sans-serif;
+}
+
+.featured-head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.featured-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2f7ad1;
+  margin-bottom: 0.6rem;
+}
+
+.featured-head h2 {
+  font-size: 2.4rem;
+  color: #1a4d94;
+  margin: 0 0 0.6rem;
+}
+
+.featured-head p {
+  color: #556;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ----- Bento-style asymmetric grid: 2 large on top, 3 small below ----- */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 22px;
+}
+
+.fp-large {
+  grid-column: span 3;
+  min-height: 300px;
+}
+
+.fp-small {
+  grid-column: span 2;
+  min-height: 260px;
+}
+
+/* ----- Card base ----- */
+.fp-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  color: #fff;
+  background: #0d2444;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 10px 30px rgba(16, 46, 92, 0.18);
+  /* entrance animation (scroll reveal) */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease, box-shadow 0.4s ease;
+}
+
+/* ----- Photo background layer: slow zoom on hover (Ken Burns) ----- */
+.fp-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover !important;
+  background-position: center !important;
+  transform: scale(1.02);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fp-card:hover .fp-bg,
+.fp-card:focus-visible .fp-bg {
+  transform: scale(1.12);
+}
+
+.featured-products.is-visible .fp-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* dark scrim so text stays readable over gradients/images */
+.fp-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 20, 42, 0) 30%,
+    rgba(6, 20, 42, 0.78) 100%
+  );
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.fp-card:hover {
+  box-shadow: 0 18px 45px rgba(16, 46, 92, 0.38);
+}
+
+.fp-card:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 20, 42, 0.15) 0%,
+    rgba(6, 20, 42, 0.85) 100%
+  );
+}
+
+/* ----- Floating watermark icon (animation #1: float + scale on hover) ----- */
+.fp-icon {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 3.4rem;
+  opacity: 0.28;
+  z-index: 1;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+
+.fp-card:hover .fp-icon {
+  transform: translateY(-6px) scale(1.15) rotate(-6deg);
+  opacity: 0.5;
+}
+
+/* ----- Body: description slides up + reveals on hover (animation #2) ----- */
+.fp-body {
+  position: relative;
+  z-index: 2;
+  padding: 1.6rem 1.6rem 1.5rem;
+  width: 100%;
+}
+
+.fp-body h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.4rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.fp-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e8eefb;
+  /* hidden by default, revealed on hover */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition: max-height 0.45s ease, opacity 0.4s ease, transform 0.45s ease;
+}
+
+.fp-card:hover .fp-desc,
+.fp-card:focus-visible .fp-desc {
+  max-height: 160px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- "Explore →" link (animation #3: arrow slides) ----- */
+.fp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.9rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #7fd0ff;
+}
+
+.fp-arrow {
+  transition: transform 0.35s ease;
+}
+
+.fp-card:hover .fp-arrow {
+  transform: translateX(6px);
+}
+
+/* ----- Light sweep across the card on hover (animation #4) ----- */
+.fp-sweep {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.18) 48%,
+    transparent 62%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.fp-card:hover .fp-sweep {
+  transform: translateX(120%);
+}
+
+.fp-card:focus-visible {
+  outline: 3px solid #7fd0ff;
+  outline-offset: 3px;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+  .fp-large {
+    grid-column: span 3;
+  }
+  .fp-small {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  .fp-large,
+  .fp-small {
+    grid-column: 1 / -1;
+    min-height: 220px;
+  }
+  /* on touch devices, show description without needing hover */
+  .fp-desc {
+    max-height: 160px;
+    opacity: 1;
+    transform: none;
+  }
+  .featured-head h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fp-card,
+  .fp-icon,
+  .fp-desc,
+  .fp-arrow,
+  .fp-sweep {
+    transition: none;
+  }
+  .fp-card {
+    opacity: 1;
+    transform: none;
+  }
+}

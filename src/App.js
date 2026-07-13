@@ -14,6 +14,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Faq from "./components/Faq";
 import Product from "./components/Products";
+import FeaturedProducts from "./components/FeaturedProducts";
 import Industries from "./components/Industries";
 import WhatsappButton  from "./components/Whatsapp";
 import GmailButton from "./components/GmailButton";
@@ -32,6 +33,7 @@ function App() {
               <Hero />
               <TrustedBy />
               <Supplier />
+              <FeaturedProducts />
               <GlobalDelivery />
               <WhyChoose />
               <Industries />
