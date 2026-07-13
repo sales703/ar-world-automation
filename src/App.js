@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import TrustedBy from "./components/Trusted";
 import Supplier from "./components/Supplier";
 import GlobalDelivery from "./components/GlobalDelivery";
+import PaymentShipping from "./components/PaymentShipping";
 import WhyChoose from "./components/WhyChoose";
 import Footer from "./components/Footer";
 
@@ -31,9 +32,10 @@ function App() {
           element={
             <>
               <Hero />
-              <TrustedBy />
               <Supplier />
               <FeaturedProducts />
+              <PaymentShipping />
+              <TrustedBy />
               <GlobalDelivery />
               <WhyChoose />
               <Industries />

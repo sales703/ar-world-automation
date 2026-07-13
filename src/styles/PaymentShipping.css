@@ -1,0 +1,247 @@
+/* ===== Express Payment & Global Delivery ===== */
+.payment-shipping {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+  font-family: Arial, sans-serif;
+}
+
+.ps-head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.ps-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2f7ad1;
+  margin-bottom: 0.6rem;
+}
+
+.ps-head h2 {
+  font-size: 2.4rem;
+  color: #1a4d94;
+  margin: 0 0 0.6rem;
+}
+
+.ps-head p {
+  color: #556;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ----- Photo banner (air + road freight) ----- */
+.ps-banner {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 18px;
+  margin-bottom: 2.75rem;
+}
+
+.ps-photo {
+  position: relative;
+  margin: 0;
+  height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(16, 46, 92, 0.16);
+  /* scroll-reveal */
+  opacity: 0;
+  transform: translateY(28px);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+}
+
+.ps-photo-road {
+  transition-delay: 0.12s;
+}
+
+.payment-shipping.is-visible .ps-photo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ps-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.03);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ps-photo:hover img {
+  transform: scale(1.11);
+}
+
+.ps-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 20, 42, 0) 35%,
+    rgba(6, 20, 42, 0.82) 100%
+  );
+}
+
+.ps-photo figcaption {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #fff;
+}
+
+.ps-photo-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7fd0ff;
+}
+
+.ps-photo-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ----- Two groups side by side, split by a divider ----- */
+.ps-groups {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.ps-group {
+  min-width: 0;
+}
+
+.ps-group-label {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0d2444;
+  margin: 0 0 1.4rem;
+}
+
+.ps-divider {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(26, 77, 148, 0.22) 20%,
+    rgba(26, 77, 148, 0.22) 80%,
+    transparent
+  );
+}
+
+/* ----- Logo tiles ----- */
+.ps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ps-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid #e6ecf5;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(16, 46, 92, 0.06);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease, border-color 0.35s ease;
+  /* scroll-reveal */
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.payment-shipping.is-visible .ps-tile {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* staggered reveal */
+.ps-grid .ps-tile:nth-child(1) { transition-delay: 0.02s; }
+.ps-grid .ps-tile:nth-child(2) { transition-delay: 0.08s; }
+.ps-grid .ps-tile:nth-child(3) { transition-delay: 0.14s; }
+.ps-grid .ps-tile:nth-child(4) { transition-delay: 0.20s; }
+.ps-grid .ps-tile:nth-child(5) { transition-delay: 0.26s; }
+.ps-grid .ps-tile:nth-child(6) { transition-delay: 0.32s; }
+
+.ps-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(16, 46, 92, 0.16);
+  border-color: #cfe0f5;
+}
+
+.ps-logo {
+  max-width: 100%;
+  max-height: 42px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 860px) {
+  .ps-banner {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .ps-photo {
+    height: 220px;
+  }
+  .ps-groups {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+  .ps-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(26, 77, 148, 0.22) 20%,
+      rgba(26, 77, 148, 0.22) 80%,
+      transparent
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .ps-head h2 {
+    font-size: 1.9rem;
+  }
+  .ps-tile {
+    height: 72px;
+  }
+  .ps-logo {
+    max-height: 36px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .ps-tile,
+  .ps-photo,
+  .ps-photo img {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

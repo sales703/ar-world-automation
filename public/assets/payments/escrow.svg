@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" role="img" aria-label="Escrow">
+  <circle cx="19" cy="20" r="13" fill="#3FB34F"/>
+  <path d="M12 20 l4.5 5 l9 -11" stroke="#ffffff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="40" y="27" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="20" fill="#1A3C6E">escrow</text>
+</svg>
