@@ -102,6 +102,7 @@ const Contact = () => {
                         <div className="contact-method">
                             <h3>General Inquiries</h3>
                             <p>Email: <a href="mailto:arworldautomation.in@gmail.com">arworldautomation.in@gmail.com</a></p>
+                            <p>Email: <a href="mailto:sales@arworldautomation.com">sales@arworldautomation.com</a></p>
                             <p>Mobile: +91 92087 75450</p>
                         </div>
                         

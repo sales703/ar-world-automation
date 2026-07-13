@@ -6,7 +6,7 @@ import '../styles/Footer.css';
 
 export default function Footer() {
   const phoneNumber = "+919208775450";
-  const emailAddress = "arworldautomation.in@gmail.com";
+  const emailAddress = "sales@arworldautomation.com";
   const whatsappNumber = "919208775450";
   const whatsappMessage = "Hello, I'd like to chat with you!";
 
