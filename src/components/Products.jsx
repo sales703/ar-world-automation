@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/Product.css";
 import TrustedBy from "./Trusted";
 
@@ -23,34 +23,96 @@ const categoryData = [
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const gridRef = useRef(null);
+  const [visible, setVisible] = useState(false);
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
   };
 
+  useEffect(() => {
+    const node = gridRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="products-page">
       <section className="products-hero">
-        <h1>Product Offerings</h1>
-        <p>Explore our extensive range of industrial automation spare parts.</p>
+        <div className="products-hero-overlay" aria-hidden="true"></div>
+        <div className="products-hero-inner">
+          <span className="products-hero-eyebrow">Welcome to AR World Automation</span>
+          <h1>Explore Our Product Range</h1>
+          <p>
+            A complete portfolio of industrial automation spare parts &mdash;
+            sourced globally, delivered with trust, and built to keep your
+            operations running.
+          </p>
+          <div className="products-hero-stats">
+            <div className="phs-item">
+              <strong>500+</strong>
+              <span>Product Lines</span>
+            </div>
+            <div className="phs-item">
+              <strong>Global</strong>
+              <span>Sourcing &amp; Delivery</span>
+            </div>
+            <div className="phs-item">
+              <strong>Trusted</strong>
+              <span>Genuine Brands</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Categories Section */}
       <div className="categories-section">
-        <h3>Categories</h3>
-        <div className="categories-grid">
+        <div className="categories-head">
+          <span className="categories-eyebrow">Browse by Category</span>
+          <h3>Our Categories</h3>
+          <p className="categories-sub">
+            Tap a category to explore &mdash; every part you need for control,
+            motion, sensing, and more.
+          </p>
+        </div>
+
+        <div
+          className={`categories-grid ${visible ? "is-visible" : ""}`}
+          ref={gridRef}
+        >
           {categoryData.map((cat, index) => (
             <div
               key={index}
-              className="category-wrapper"
+              className={`category-wrapper ${
+                selectedCategory === cat.name ? "active" : ""
+              }`}
+              style={{ transitionDelay: `${index * 55}ms` }}
               onClick={() => handleCategoryChange(cat.name)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) =>
+                e.key === "Enter" && handleCategoryChange(cat.name)
+              }
             >
-              <div
-                className={`category-card ${
-                  selectedCategory === cat.name ? "active" : ""
-                }`}
-                style={{ backgroundImage: `url(${cat.image})` }}
-              ></div>
+              <div className="category-card">
+                <div
+                  className="category-img"
+                  style={{ backgroundImage: `url(${cat.image})` }}
+                ></div>
+                <span className="category-shine" aria-hidden="true"></span>
+              </div>
               <p className="category-label">{cat.name}</p>
             </div>
           ))}
