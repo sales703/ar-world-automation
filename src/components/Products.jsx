@@ -50,7 +50,10 @@ const Products = () => {
 
   return (
     <div className="products-page">
-      <section className="products-hero">
+      <section
+        className="products-hero"
+        style={{ backgroundImage: "url(/assets/Featured/plc.jpg)" }}
+      >
         <div className="products-hero-overlay" aria-hidden="true"></div>
         <div className="products-hero-inner">
           <span className="products-hero-eyebrow">Welcome to AR World Automation</span>
