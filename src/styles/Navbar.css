@@ -54,8 +54,9 @@
   gap: 10px;
 }
 .site-logo img {
-  width: 48px;
-  height: auto;
+  height: 52px;
+  width: auto;
+  max-width: 100%;
   display: block;
 }
 .logo-text h2 {

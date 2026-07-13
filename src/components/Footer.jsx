@@ -57,11 +57,7 @@ export default function Footer() {
             {/* Column 1: Logo & Socials */}
             <div className="footer-column footer-logo">
               <div className="site-logo">
-                <img src="/assets/logo1.png" alt="PLC Automation" />
-                <div className="logo-text">
-                  <h2>AR WORLD AUTOMATION</h2>
-                  <p>AUTOMATION THAT MOVES THE WORLD.</p>
-                </div>
+                <img src="/assets/logo-full.jpeg" alt="AR World Automation - Automation That Moves The World" />
               </div>
               <p className="footer-logo-description">
                 Your one-stop solution for industrial automation parts, offering global delivery and trusted sourcing.

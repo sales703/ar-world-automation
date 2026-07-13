@@ -37,11 +37,7 @@ export default function Navbar() {
       <header className="site-navbar">
         <div className="site-inner">
           <div className="site-logo">
-            <img src="/assets/logo.jpeg" alt="AR World Automation" />
-            <div className="logo-text">
-              <h2>AR WORLD AUTOMATION</h2>
-              <p>AUTOMATION THAT MOVES THE WORLD.</p>
-            </div>
+            <img src="/assets/logo-full.jpeg" alt="AR World Automation - Automation That Moves The World" />
           </div>
 
           {/* hamburger (visible on mobile) */}
