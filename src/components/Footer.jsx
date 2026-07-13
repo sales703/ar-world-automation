@@ -97,7 +97,7 @@ export default function Footer() {
               <ul className="footer-list">
                 <li><a href="mailto:arworldautomation.in@gmail.com">arworldautomation.in@gmail.com</a></li>
                 <li><a href="tel:+1234567890">+91 92087 75450</a></li>
-                <li><p>R-96, Street No. 8, Block S,, Jamia Nagar, Okhla, New Delhi, Delhi 110025</p></li>
+                <li><p>Office No. S-01, Second Floor, D-42, Sector-2, Near Metro Station 15 &amp; 16, Noida, Gautam Buddha Nagar, Uttar Pradesh 201301</p></li>
               </ul>
             </div>
 

@@ -115,9 +115,10 @@ const Contact = () => {
                             <h3>India</h3>
                             <p>AR World Automation Ltd.</p>
                             <address>
-                                R-96, Street No. 8, Block S,, Jamia Nagar, Okhla<br />
-                                New Delhi, Delhi<br />
-                                india, 110025
+                                Office No. S-01, Second Floor, D-42,<br />
+                                Sector-2, Near Metro Station 15 &amp; 16,<br />
+                                Noida, Gautam Buddha Nagar,<br />
+                                Uttar Pradesh 201301
                             </address>
                             <p>Relationship Manager: Rupali</p>
                             <p>Phone: +91 92087 75450</p>
@@ -126,7 +127,7 @@ const Contact = () => {
                             <h3>Map</h3>
                             <div className="map-container">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.002888204418!2d77.28334827629146!3d28.569675986930918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3c498c8d281%3A0x1fe976514d165b96!2sVikalp%20Public%20School!5e0!3m2!1sen!2sin!4v1757937494639!5m2!1sen!2sin"
+                                    src="https://www.google.com/maps?q=D-42%20Sector%202%20Noida%20Near%20Metro%20Station%2015%2016%20Uttar%20Pradesh%20201301&output=embed"
                                     width="100%"
                                     height="300"
                                     style={{ border: '0' }}
