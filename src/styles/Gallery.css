@@ -1,0 +1,233 @@
+/* ---------- Showroom Gallery ---------- */
+.gallery-page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 48px 20px 72px;
+}
+
+/* header */
+.gallery-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+.gallery-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0056a3;
+  background: #eaf2fb;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.gallery-head h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #0d2a4d;
+  line-height: 1.1;
+}
+.gallery-head p {
+  margin: 0;
+  color: #55606f;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+/* masonry-style showroom grid */
+.gallery-grid {
+  columns: 4 260px;
+  column-gap: 16px;
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #0d2a4d;
+  break-inside: avoid;
+  box-shadow: 0 6px 18px rgba(13, 42, 77, 0.1);
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 0.35s ease;
+  animation: gallery-fade 0.6s both;
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(13, 42, 77, 0.28);
+}
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* hover overlay */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to top,
+    rgba(13, 42, 77, 0.55),
+    rgba(13, 42, 77, 0.05) 55%,
+    rgba(13, 42, 77, 0)
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.gallery-item:hover .gallery-overlay,
+.gallery-item:focus-visible .gallery-overlay {
+  opacity: 1;
+}
+.gallery-zoom {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0056a3;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.7);
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.gallery-item:hover .gallery-zoom {
+  transform: scale(1);
+}
+
+@keyframes gallery-fade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Lightbox ---------- */
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(6, 18, 34, 0.92);
+  backdrop-filter: blur(4px);
+  animation: gallery-fade 0.25s ease;
+}
+.gl-figure {
+  margin: 0;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.gl-figure img {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.gl-figure figcaption {
+  color: #cdd8e6;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.gl-close,
+.gl-nav {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.gl-close:hover,
+.gl-nav:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.08);
+}
+.gl-close {
+  top: 18px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+}
+.gl-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  font-size: 2rem;
+  line-height: 1;
+}
+.gl-nav:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+.gl-prev {
+  left: 20px;
+}
+.gl-next {
+  right: 20px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .gallery-grid {
+    columns: 3 200px;
+  }
+}
+@media (max-width: 600px) {
+  .gallery-page {
+    padding: 32px 14px 56px;
+  }
+  .gallery-grid {
+    columns: 2 140px;
+    column-gap: 12px;
+  }
+  .gallery-item {
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }
+  .gl-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 1.6rem;
+  }
+  .gl-prev {
+    left: 8px;
+  }
+  .gl-next {
+    right: 8px;
+  }
+}

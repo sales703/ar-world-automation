@@ -17,6 +17,7 @@ import Faq from "./components/Faq";
 import Product from "./components/Products";
 import FeaturedProducts from "./components/FeaturedProducts";
 import Industries from "./components/Industries";
+import Gallery from "./components/Gallery";
 import WhatsappButton  from "./components/Whatsapp";
 import GmailButton from "./components/GmailButton";
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<Faq />}/>
         <Route path="/products" element={<Product />}/>
+        <Route path="/gallery" element={<Gallery />}/>
 
 
         {/* Add more pages here */}

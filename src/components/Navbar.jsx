@@ -71,6 +71,11 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/gallery" onClick={handleLinkClick}>
+                  GALLERY
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/faq" onClick={handleLinkClick}>
                   FAQ'S
                 </NavLink>
