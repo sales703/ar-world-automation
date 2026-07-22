@@ -116,7 +116,6 @@ const Contact = () => {
                             <h3>India</h3>
                             <p>AR World Automation Ltd.</p>
                             <address>
-                                Office No. S-01, Second Floor, D-42,<br />
                                 Sector-2, Near Metro Station 15 &amp; 16,<br />
                                 Noida, Gautam Buddha Nagar,<br />
                                 Uttar Pradesh 201301
@@ -128,7 +127,7 @@ const Contact = () => {
                             <h3>Map</h3>
                             <div className="map-container">
                                 <iframe
-                                    src="https://www.google.com/maps?q=D-42%20Sector%202%20Noida%20Near%20Metro%20Station%2015%2016%20Uttar%20Pradesh%20201301&output=embed"
+                                    src="https://www.google.com/maps?q=Sector%202%20Noida%20Near%20Metro%20Station%2015%2016%20Uttar%20Pradesh%20201301&output=embed"
                                     width="100%"
                                     height="300"
                                     style={{ border: '0' }}
